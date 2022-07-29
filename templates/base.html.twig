@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        <link rel="stylesheet" href="{{ asset('assets/css/styles.css ') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/accueil.css ') }}">
+
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+        <div class="header">
+            <div class="titleHeader">
+                <h1>Dog's Adopt</h1>
+            </div>
+        </div>
+            <nav class="menu">
+                <a href="/acceuil">acceuil</a>
+                <a href="/actualite">actualite</a>
+                <a href="/register">adhesion</a>
+                <a href="/aide">aide</a>
+                <a href="/chien">chien</a>
+                <a href="/chienperdu">chienperdu</a>
+                <a href="/contact">contact</a>
+                <a href="/maltraitance">maltraitance</a>
+            </nav>
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+        {% block footer %}{% endblock %}
+        <footer>
+            <div class="titleFooter">
+                <h1>NUMERO DE TELEPHONE</h1>
+                <p>06.04.67.89.45</p>
+                <h1>ADRESSE</h1>
+                <p>06.04.67.89.45</p>
+                <h1>E-MAIL</h1>
+                <p>06.04.67.89.45</p>
+            </div>        
+        </footer>
+</html>

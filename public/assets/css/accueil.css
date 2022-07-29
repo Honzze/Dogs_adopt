@@ -1,0 +1,24 @@
+.header{
+display: flex;
+flex: row;
+}
+.males{
+    background-image: url(./images/chien-male-accueil.jpg);
+    background-size: cover;
+    width: 50%;
+    height:600px ;
+}
+.femlles{
+    background-image: url(./images/chien-femelle-accueil.jpg);
+    background-size: cover;
+    width: 50%;
+    height:600px ;
+}
+.text-males{
+    color: white;
+    text-align: center;
+}
+.text-femelles{
+    color: white;
+    text-align: center;
+}
