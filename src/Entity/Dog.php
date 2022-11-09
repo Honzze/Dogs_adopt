@@ -31,6 +31,12 @@ class Dog
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $image;
 
+    #[ORM\OneToOne(mappedBy: 'Dog', targetEntity: AdoptedDog::class, cascade: ['persist', 'remove'])]
+    private $adoptedDog;
+
+    #[ORM\Column(type: 'boolean')]
+    private $adopted;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +110,35 @@ class Dog
     public function setImage(?string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getAdoptedDog(): ?AdoptedDog
+    {
+        return $this->adoptedDog;
+    }
+
+    public function setAdoptedDog(AdoptedDog $adoptedDog): self
+    {
+        // set the owning side of the relation if necessary
+        if ($adoptedDog->getDog() !== $this) {
+            $adoptedDog->setDog($this);
+        }
+
+        $this->adoptedDog = $adoptedDog;
+
+        return $this;
+    }
+
+    public function isAdopted(): ?bool
+    {
+        return $this->adopted;
+    }
+
+    public function setAdopted(bool $adopted): self
+    {
+        $this->adopted = $adopted;
 
         return $this;
     }

@@ -1,21 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
+
+    <div class="titre_memnber">
+        <h1 >Devenez adherant</h1>   
+    </div>
+    
+<div class="registrationForm">
 
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
+        <div class="registrationEmail"> 
+        {{ form_row(registrationForm.email, {
+            label: 'Adresse Email'
+        }) }}
+        </div>
+
+        <div class="registrationPassword">
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Mots de passe'
+        }) }}
+        </div>
+
+        <div class="registrationAgreeTerms">
+        {{ form_row(registrationForm.agreeTerms, {
+            label: "Accepter les conditions d'utilisation"
+        }) }}
+        </div>
+        <div class="btn-registration">
+        <button type="submit" class="btn-adherer">Adherer</button>
+        </div>
+
     {{ form_end(registrationForm) }}
+
+</div>
+    <h1 class="titre_member">Vous etes deja adherant connecter vous ici</h1>
+        <div class="btn-registration">
+            <input type="button" class="btn-adherer" onclick=window.location.href='/login'; value=Connection>
+        </div>
 {% endblock %}

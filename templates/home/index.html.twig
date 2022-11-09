@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="header">
+        <div class="images-bg">
+			<img src="../../assets/images/images-bg-accueil.jpg" alt="">
+        </div>
+    </div>
+    <div class="logo-adh">
+        <img src="../../assets/images/cnda-logo.png" />
+    </div>
+
+<div class="container-gallery">
+	<div class="gallery">
+		<a class="gallery-item" href="/chien">
+			<img class="gallery-image" src="../../assets/images/chien-gallery.jpg">
+		</a>
+		<a class="gallery-item" href="/actualite">
+			<img class="gallery-image"src="../../assets/images/actualite-gallery.jpg" >
+		</a>
+		<a class="gallery-item" href="/aide">
+			<img class="gallery-image" src="../../assets/images/don-gallery.jpg" >
+		</a>
+		<a class="gallery-item" href="/register">
+			<img class="gallery-image" src="../../assets/images/adhesion-gallery.jpg" >
+		</a>
+	</div>
+</div>
+{% endblock %}

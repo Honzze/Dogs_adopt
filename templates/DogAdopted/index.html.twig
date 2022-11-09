@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+            <div class="colDog">
+                <div class="bodyCard">
+                    {% for adoptedDog in adoptedDogs %}
+                        <div class="container">
+                            <div class="card">
+                                <div class="card__header">
+                                    <img src="{{adoptedDog.dog.image}}" alt="card__image" class="card__image" width="600">
+                                </div>
+                                <div class="card__body">
+                                    <h4>{{adoptedDog.dog.name}}</h4>
+                                    <h4>{{adoptedDog.dog.breed}}</h4>
+                                    <p>{{adoptedDog.dog.description}}</p>
+                                    <p>{{adoptedDog.dog.id}}</p>
+                                </div>
+                            <div class="card__footer">
+                                <div class="user"></div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

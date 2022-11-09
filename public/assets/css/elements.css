@@ -1,0 +1,347 @@
+/***********************************CardDog*******************************************/
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+.colDog {
+    display: flex;
+}
+
+.bodyCard {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container {
+    flex-direction: row;
+    justify-content: center;
+    margin-block: 2rem;
+    gap: 2rem;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+
+}
+
+.card__body {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+
+.tag {
+    align-self: flex-start;
+    padding: .25em .75em;
+    border-radius: 1em;
+    font-size: .75rem;
+}
+
+.card__body h4 {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin: 2px;
+    padding-left: 15px;
+}
+
+.card__body p {
+    margin: 2px;
+    padding-left: 15px;
+}
+
+.card__footer {
+    display: flex;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.button-adopt {
+    background-color: rgba(51, 51, 51, 0.05);
+    border-radius: 8px;
+    border-width: 0;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 12px;
+    text-align: center;
+    transition: all 200ms;
+    vertical-align: baseline;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+
+/***********************************HELP*******************************************/
+
+
+.containerHelp {
+    margin-left: 100px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.titleHelp {
+    font-size: 50px;
+}
+
+.contentHelp {
+    font-size: 25px;
+}
+
+.titleListeHelp {
+    margin-left: 30px;
+}
+
+.listeHelp {
+    margin-left: 70px;
+}
+
+
+/***********************************MEMBER*******************************************/
+
+
+.registrationForm {
+    display: flex;
+    justify-content: center;
+    margin: 3%;
+}
+
+.titre_member {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.registrationEmail {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.registrationPassword {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.registrationAgreeTerms {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.btn-adherer {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.btn-registration {
+    display: flex;
+    justify-content: center;
+}
+
+.form-control-email {
+    border: 1px solid black;
+}
+
+
+/***********************************FORM-CONTACT*******************************************/
+
+
+.container-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 3px 3px 3px 3px gray;
+    border-radius: 3%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.btn-contact {
+    padding: 10px;
+    background-color: black;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.formEmail {
+    font-size: 20px;
+    margin: 20px;
+}
+
+.formName {
+    font-size: 20px;
+    margin: 20px;
+}
+
+.formMesssage {
+    font-size: 20px;
+    margin: 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+#contact_message {
+    max-width: 400px;
+}
+
+#contact_email {
+    width: 400px;
+}
+
+#contact_name {
+    width: 400px;
+}
+
+
+/***********************************CARD-ACTUALITY*******************************************/
+
+
+.bodyCardAcuatlity {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.containerAcuatlity {
+    flex-direction: row;
+    justify-content: center;
+    margin-block: 2rem;
+    gap: 2rem;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.card__imageAcuatlity {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.cardAcuatlity {
+    display: flex;
+    flex-direction: column;
+    width: clamp(40rem, calc(40rem + 2vw), 22rem);
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    background: #ECE9E6;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+}
+
+.card__bodyAcuatlity {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.card__bodyAcuatlity h4 {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+.card__footerAcuatlity {
+    display: flex;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .cardAcuatlity {
+        width: clamp(15rem, calc(40rem + 2vw), 22rem);
+    }
+}
+
+
+/***********************************LOGINFORM*******************************************/
+
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.form-control-email {
+    width: 150px;
+}
+
+.form-control-password {
+    width: 150px;
+}
+
+.btn-login {
+    width: 75px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+}
+
+
+/***********************************ABUSE*******************************************/
+
+
+.container-abuse {
+    margin: 0;
+}
+
+.title-maltraitance {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.question-maltraitance {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.text-maltraitance {
+    text-align: start;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.carret-maltraitance {
+    margin: 10px;
+    word-wrap: break-word;
+    gap: 0.2rem;
+}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+{% block body %}
+  <div class="bodyCardAcuatlity">
+	{% for actualite in actualites %}
+		<div class="containerAcuatlity">
+			<div class="cardAcuatlity">
+					<img src="" alt="card__image" class="card__imageAcuatlity" width="600">
+				<div class="card__bodyAcuatlity">
+					<h4>{{actualite.title}}</h4>
+					<p>{{actualite.description}}</p>
+				</div>
+				<div class="card__footerAcuatlity">
+					<div class="user"></div>
+				</div>
+			</div>
+		</div> 
+	{% endfor %}
+  </div>
+{% endblock %}

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -25,10 +27,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $roles = [];
 
     #[ORM\Column(type: 'string')]
-    private $password;
+    private $password; 
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: AdoptedDog::class, orphanRemoval: true)]
+    private $Dog;
+
+    public function __construct()
+    {
+        $this->Dog = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -108,6 +118,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, AdoptedDog>
+     */
+    public function getDog(): Collection
+    {
+        return $this->Dog;
+    }
+
+    public function addDog(AdoptedDog $dog): self
+    {
+        if (!$this->Dog->contains($dog)) {
+            $this->Dog[] = $dog;
+            $dog->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDog(AdoptedDog $dog): self
+    {
+        if ($this->Dog->removeElement($dog)) {
+            // set the owning side to null (unless already changed)
+            if ($dog->getUser() === $this) {
+                $dog->setUser(null);
+            }
+        }
 
         return $this;
     }

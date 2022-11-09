@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+{# rappeler la regle des 2 clic pour ca quil nes pas obligatoire davoir un compte pour donné #}
+  <div class="containerHelp">
+    <p class="titleHelp">Faite un don</p>
+      <p class="contentHelp">Vous avez la possibilite de faire une donation pour apporter votre aide au bien etre des aniamux</p>
+        <p class="titleListeHelp">Votre don servira pour :</p>
+          <ul class="listeHelp">
+            <li>Le bien etre animal (nourriture, jouet, couchette... )</li>
+            <li>Payer le personnel (agent d'acceuil, agent d'entretien...)</li>
+            <li>Payer les frais de veterinaire</li>
+          </ul>
+        <form action="https://buy.stripe.com/test_5kAcOv7tbb1ZdQQbII">
+          <button class="btn-adherer" type="submit">Faire un don</button>
+        </form>
+
+        {% if not app.user %}
+          veuillez vous enregister pour faire une donation 
+          <a href="/register">Adhesion</a>
+        {% endif %}
+  </div>
+
+{% endblock %}
