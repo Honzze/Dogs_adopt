@@ -4,6 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Dog;
 use App\Entity\Actualite;
+use App\Entity\User;
+use App\Entity\AdoptedDog;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -48,6 +50,18 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::section('Actualite'),
             yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
                 MenuItem::linkToCrud('Add Actualite', 'fas fa-plus', Actualite::class)
+            ]),
+
+            
+            yield MenuItem::section('User'),
+            yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
+                MenuItem::linkToCrud('Add User', 'fas fa-plus', User::class)
+            ]),
+
+                        
+            yield MenuItem::section('AdoptedDog'),
+            yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
+                MenuItem::linkToCrud('Add AdoptedDog', 'fas fa-plus', Dog::class, User::class, AdoptedDog::class)
             ]),
         ];
         

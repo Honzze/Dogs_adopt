@@ -40,7 +40,7 @@ img {
 
 }
 
-.card__body {
+.card_body {
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -54,22 +54,26 @@ img {
     font-size: .75rem;
 }
 
-.card__body h4 {
+.card_body h4 {
     font-size: 1.5rem;
     text-transform: capitalize;
     margin: 2px;
     padding-left: 15px;
 }
 
-.card__body p {
+.card_body p {
     margin: 2px;
     padding-left: 15px;
 }
 
-.card__footer {
+.card_footer {
     display: flex;
     padding: 1rem;
     margin-top: auto;
+}
+
+.card_image{
+    height: 25rem;
 }
 
 .button-adopt {
@@ -188,7 +192,18 @@ img {
     padding: 10px;
     background-color: black;
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border: solid 2px rgb(0, 0, 0);
+}
+.btn-adherer:hover{
+    transition-duration: 300ms;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border: solid 2px rgb(0, 0, 0);
 }
 
 .btn-registration {
@@ -222,7 +237,18 @@ img {
     padding: 10px;
     background-color: black;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border: solid 2px rgb(0, 0, 0);
+}
+.btn-contact:hover{
+    transition-duration: 300ms;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border: solid 2px rgb(0, 0, 0);
 }
 
 .formEmail {
@@ -326,6 +352,15 @@ img {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    border: solid 2px black;
+    border-radius: 1em;
+    box-shadow: 5px 3px 3px rgb(0, 0, 0);    
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 8%;
+}
+.loginContainer label{
+    margin-top: 1.5rem;
 }
 
 .form-control-email {
@@ -337,12 +372,24 @@ img {
 }
 
 .btn-login {
-    width: 75px;
+    margin: 2rem;
     padding: 10px;
     background-color: black;
     color: white;
-    margin-top: 10px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: solid 2px rgb(0, 0, 0);
 }
+.btn-login:hover{
+    transition-duration: 300ms;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: solid 2px rgb(0, 0, 0);
+}
+
 
 
 /***********************************ABUSE*******************************************/
