@@ -3,6 +3,16 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+<div class="category">
+<ul>
+{% for dog in dogs %}
+
+ <li class="dogBreed" id={{dog.breed}}>{{dog.breed}}</li>
+
+{% endfor %}
+</ul>
+
+</div>
 <div class="colDog">
   <div class="bodyCard">
 	{% for dog in dogs %}
@@ -15,7 +25,7 @@
 					</div>
 					<div class="card_body">
 						<h4>{{dog.name}}</h4>
-						<h4>{{dog.breed}}</h4>
+						<h4 class="h4DogBreed" data-id={{dog.breed}}>{{dog.breed}}</h4>
 						<p>{{dog.description}}</p>
 					</div>
 					<div class="card_footer">

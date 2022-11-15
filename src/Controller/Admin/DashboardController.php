@@ -50,6 +50,7 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::section('Actualite'),
             yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
                 MenuItem::linkToCrud('Add Actualite', 'fas fa-plus', Actualite::class)
+                
             ]),
 
             

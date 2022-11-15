@@ -16,7 +16,19 @@
         <form class='formHelpButton'action="https://buy.stripe.com/test_5kAcOv7tbb1ZdQQbII">
           <button class="buttonHelp" type="submit">Faire un don</button>
         </form>
-
+        
+        <div id='containerStripe'>
+          <form id="payment-form">
+            <div id="payment-element">
+            
+              <!-- Elements will create form elements here -->
+              </div>
+                <button id="submit">Submit</button>
+              <div id="error-message">
+              <!-- Display error message to your customers here -->
+            </div>
+          </form>
+        </div>
         {% if not app.user %}
           veuillez vous enregister pour faire une donation 
           <a href="/register">Adhesion</a>

@@ -9,6 +9,13 @@
 		<link rel="stylesheet" href="{{ asset('assets/css/home.css ') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/header-footer.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/elements.css ') }}">
+		<link rel="stylesheet" href="{{ asset('assets/css/checkout.css ') }}">
+  		<script src="https://js.stripe.com/v3/"></script>
+		<script src="{{ asset('assets/js/status.js') }}"></script>
+		<script src="{{ asset('assets/js/checkout.js') }}"></script>
+
+
+
 		{% block stylesheets %}{% endblock %}
 
 		<div class="header">
@@ -55,7 +62,6 @@
 		</nav>
 
 		{% block head %}{% endblock %}
-
 	</head>
 	<body>
 		{% block body %}{% endblock %}
@@ -83,5 +89,6 @@
 
 {% block javascripts %}
 	<script src="{{ asset('assets/js/main.js') }}"></script>
+	<script src="{{ asset('assets/js/filter.js') }}"></script>
 {% endblock %}
 

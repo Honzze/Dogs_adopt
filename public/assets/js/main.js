@@ -1,5 +1,3 @@
-console.log("JS Load");
-
 const Burger = document.querySelector(".menu-collapsed");
 const Ul = document.querySelector(".Collapse-Menu");
 const ResponsiveMenu = document.querySelector(".menu-collapsed");
