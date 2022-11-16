@@ -269,3 +269,34 @@ transform: rotate(45deg);
 .Collapse-Menu {
 	width: 100%;
 }
+
+/***********************************BURGER-MENU*******************************************/
+
+.containerInfo{
+	box-sizing: content-box;
+    width: calc(100% - 90px);
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+.rowInfo{
+	display: flex;
+	justify-content: center;
+	align-items: normal;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.colInfo{
+    max-width: 50%;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 50px;
+}
+
+.imagesInfo{
+	width: 4rem;
+}

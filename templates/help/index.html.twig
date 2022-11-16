@@ -3,8 +3,45 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-{# rappeler la regle des 2 clic pour ca quil nes pas obligatoire davoir un compte pour donné #}
-  <div class="containerHelp">
+
+  <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        {% for message in app.flashes('success') %}
+                            <div 
+                                style="color: green;
+                                    border: 2px green solid;
+                                    text-align: center;
+                                    padding: 5px;margin-bottom: 10px;">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+  
+                        <form id='checkout-form' method='post' action="{{ path('app_help_index') }}">             
+                            <input type='hidden' name='stripeToken' id='stripe-token-id'>                              
+                            <label for="card-element" class="mb-5">Checkout Forms</label>
+                            <br>
+                            <div id="card-element" class="form-control" ></div>
+                            <button 
+                                id='pay-btn'
+                                class="btn btn-success mt-3"
+                                type="button"
+                                style="margin-top: 20px; width: 100%;padding: 7px; background-color: black; color: white;"
+                                onclick="createToken()">VALIDER
+                            </button>
+                        <form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+  {# <div class="containerHelp">
     <p class="titleHelp">N'hésites pas à donner</p>
       <p class="contentHelp">Vous avez la possibilité de faire une donation pour apporter votre aide au bien-être des animaux</p>
         <p class="titleListeHelp">Votre don servira pour :</p>
@@ -16,23 +53,21 @@
         <form class='formHelpButton'action="https://buy.stripe.com/test_5kAcOv7tbb1ZdQQbII">
           <button class="buttonHelp" type="submit">Faire un don</button>
         </form>
+
+            <!-- Display a payment form -->
+            <form method="post" id="payment-form">
+                <div id="payment-element">
+                  <!--Stripe.js injects the Payment Element-->
+                </div>
+                  <button id="submit">
+                    <div class="spinner hidden" id="spinner"></div>
+                    <span id="button-text">Pay now</span>
+                  </button>
+                <div id="payment-message" class="hidden"></div>
+            </form>
         
-        <div id='containerStripe'>
-          <form id="payment-form">
-            <div id="payment-element">
-            
-              <!-- Elements will create form elements here -->
-              </div>
-                <button id="submit">Submit</button>
-              <div id="error-message">
-              <!-- Display error message to your customers here -->
-            </div>
-          </form>
-        </div>
-        {% if not app.user %}
+            <iframe id='kofiframe' src='https://ko-fi.com/dogsadopt/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;padding:4px;background:#f9f9f9;' height='712' title='dogsadopt'></iframe>        {% if not app.user %}
           veuillez vous enregister pour faire une donation 
           <a href="/register">Adhesion</a>
         {% endif %}
-  </div>
-
-{% endblock %}
+  </div> #}

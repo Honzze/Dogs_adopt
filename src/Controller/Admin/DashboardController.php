@@ -62,7 +62,7 @@ class DashboardController extends AbstractDashboardController
                         
             yield MenuItem::section('AdoptedDog'),
             yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
-                MenuItem::linkToCrud('Add AdoptedDog', 'fas fa-plus', Dog::class, User::class, AdoptedDog::class)
+                MenuItem::linkToCrud('Add AdoptedDog', 'fas fa-plus', AdoptedDog::class)
             ]),
         ];
         
