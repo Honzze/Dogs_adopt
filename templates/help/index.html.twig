@@ -4,38 +4,29 @@
 
 {% block body %}
 
-  <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-body">
-                        {% for message in app.flashes('success') %}
-                            <div 
-                                style="color: green;
-                                    border: 2px green solid;
-                                    text-align: center;
-                                    padding: 5px;margin-bottom: 10px;">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-  
-                        <form id='checkout-form' method='post' action="{{ path('app_help_index') }}">             
-                            <input type='hidden' name='stripeToken' id='stripe-token-id'>                              
-                            <label for="card-element" class="mb-5">Checkout Forms</label>
-                            <br>
-                            <div id="card-element" class="form-control" ></div>
-                            <button 
-                                id='pay-btn'
-                                class="btn btn-success mt-3"
-                                type="button"
-                                style="margin-top: 20px; width: 100%;padding: 7px; background-color: black; color: white;"
-                                onclick="createToken()">VALIDER
-                            </button>
-                        <form>
+  <div class="container containerStripe">
+      <div class="card">
+          <div class="card-body">
+              {% for message in app.flashes('success') %}
+                  <div style="color: green; border: 2px green solid; text-align: center;  padding: 5px; margin-bottom: 10px; border-radius: 1em 1em 0 0;">
+                      {{ message }}
+                  </div>
+              {% endfor %}
+              <p class="titlePayment">Entrez vos Information ci-dessous</p>
+              <form id='checkout-form' method='post' action="{{ path('app_help_index') }}">             
+                  <input type='hidden' name='stripeToken' id='stripe-token-id'>
+                  <label for="card-element" class="mb-5"></label>
+                  <br>
+                  <div id="card-element" class="form-control" ></div>
+                    <div class="blockAmount">
+                      <p class="titleAmount">Choissisez le Montant</p>
+                      <input type="number" name="stripeAmount" id="stripe-amount">
+                      <br>
+                      <button id='pay-btn' class="btn-payment" type="button" onclick="createToken()">VALIDER</button>
                     </div>
-                </div>
-            </div>
-        </div>
+              <form>
+          </div>
+      </div>
     </div>
 
 

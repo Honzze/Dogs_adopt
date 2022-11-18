@@ -21,16 +21,21 @@ class DogCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
+            ChoiceField::new('breed')->setChoices([
+                // $value => $badgeStyleName
+                'Border-collie' => 'Border-collie',
+                'Caniche' => 'Caniche',
+                'Berger-allemand' => 'Berger-allemand',
+                'labrador-retriever' => 'labrador-retriever',
+                'Golden-retriever' => 'Golden-retriever',
+                'Doberman' => 'Doberman',
+                'booldog' => 'booldog',
+                'Rottweiller' => 'Rottweiller',
+            ]),
             TextField::new('description'),
             TextField::new('image'),
             BooleanField::new('Adopted')->renderAsSwitch(false),
             DateField::new('date_of_birth'),
-            ChoiceField::new('breed')->setChoices([
-                // $value => $badgeStyleName
-                'chiwawa' => 'Chiwawa',
-                'Booldog' => 'Booldog',
-                'chien' => 'chien',
-            ]),
             ChoiceField::new('sexe')->setChoices([
                 // $value => $badgeStyleName
                 'males' => 1,

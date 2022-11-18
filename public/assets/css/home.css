@@ -67,6 +67,7 @@ button
 {
     display: flex;
     justify-content: center;
+	user-select: none;
 }
 
 
@@ -80,8 +81,10 @@ button
 	max-width: 60rem;
 	margin: 0 auto;
 	padding: 0 2rem 2rem;
+	user-select: none;
 	
 }
+
 
 .heading 
 {
@@ -126,6 +129,18 @@ button
 .gallery-image:hover 
 {
 	transform: scale(1.15);
+	filter: blur(0.2rem);
+	transition: 0.45s ease-out;
+}
+
+.galery-text {
+	position: relative;
+	z-index: 1;
+    margin-left: -250px;
+}
+
+.Text-annim {
+	transform: translateX(350px);
 }
 
 @supports (display: grid) 
@@ -149,7 +164,6 @@ button
 		z-index: 99;
 	}
 }
-
 
 /***********************************BURGER-MENU*******************************************/
 

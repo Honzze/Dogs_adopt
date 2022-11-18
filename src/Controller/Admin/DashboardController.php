@@ -40,29 +40,31 @@ class DashboardController extends AbstractDashboardController
     {
         return [
             yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
+
+            yield  MenuItem::linkToRoute('Logout', 'fa-solid fa-right-to-bracket mr-2 fa-beat-fade', 'app_home'),
             
             yield MenuItem::section('Dog'),
             yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
-                MenuItem::linkToCrud('Add dog', 'fas fa-plus', Dog::class)
+                MenuItem::linkToCrud('Show dog', 'fa-solid fa-eye fa-bounce', Dog::class)
             ]),
             
 
             yield MenuItem::section('Actualite'),
             yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
-                MenuItem::linkToCrud('Add Actualite', 'fas fa-plus', Actualite::class)
+                MenuItem::linkToCrud('Show Actualite', 'fa-solid fa-eye fa-bounce', Actualite::class)
                 
             ]),
 
             
             yield MenuItem::section('User'),
             yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
-                MenuItem::linkToCrud('Add User', 'fas fa-plus', User::class)
+                MenuItem::linkToCrud('Show User', 'fa-solid fa-eye fa-bounce', User::class)
             ]),
 
                         
             yield MenuItem::section('AdoptedDog'),
             yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
-                MenuItem::linkToCrud('Add AdoptedDog', 'fas fa-plus', AdoptedDog::class)
+                MenuItem::linkToCrud('Show AdoptedDog', 'fa-solid fa-eye fa-bounce', AdoptedDog::class)
             ]),
         ];
         

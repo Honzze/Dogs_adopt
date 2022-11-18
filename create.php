@@ -1,10 +1,10 @@
 <?php
 
-$stripe = new \Stripe\StripeClient('sk_test_51Lc2DgD3jHDmrwgZDO64xfhnZGyfLGs1tStxl20am6ZDD026JTno9nl5VpT5K1sXcfEiIEDKPEPwPogSt4vmHiyx00qDtBpWAU');
+$stripe = new \Stripe\StripeClient('pk_test_51Lc2DgD3jHDmrwgZUU0Ikui84Ox4APmpKaf43mzooMJvWaE3wlsUJnxPtLc13zEUXm0YMeJa8GAiDxCw1Re7UvuR00a6xmQuy9');
 
 $stripe->paymentIntents->create(
   [
-    'amount' => 1099,
+    'amount' => 1,
     'currency' => 'eur',
     'automatic_payment_methods' => ['enabled' => true],
   ]

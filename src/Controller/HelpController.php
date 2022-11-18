@@ -24,14 +24,14 @@ class HelpController extends AbstractController
     {
         Stripe\Stripe::setApiKey($_ENV["STRIPE_SECRET"]);
         Stripe\Charge::create ([
-                "amount" => 5 * 100,
+                "amount" => $request->request->get("stripeAmount") * 100,
                 "currency" => "usd",
                 "source" => $request->request->get('stripeToken'),
-                "description" => "Dog Adopt Payment Test"
+                "description" => "Dog's Adopt Donation"
             ]);
         $this->addFlash(
             'success',
-            'Payment Successful!'
+            'Merci pour votre don'
         );
         return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
     }

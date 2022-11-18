@@ -3,49 +3,52 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<div class="category">
-<ul>
-{# {% for dog in dogs %}
- 		<li class="dogBreed" id={{dog.breed}}>{{dog.breed}}</li>
-{% endfor %} #}
- 		<li class="dogBreed" id='Dalmatien'>Dalmatien</li>
- 		<li class="dogBreed" id='chien'>Chien</li>
- 		<li class="dogBreed" id='Booldog'>Booldog</li>
- 		<li class="dogBreed" id='labrador-retriever'>Labrador-retriever</li>
+		<div class="category">
+			<ul class="listCategory">
+			{# {% for dog in dogs %}
+					<li class="dogBreed" id={{dog.breed}}>{{dog.breed}}</li>
+			{% endfor %} #}
+			<p>Filtrer par race de chien :</p>
+					<li class="dogBreed" id='Border-collie'>Border collie</li>
+					<li class="dogBreed" id='Caniche'>Caniche</li>
+					<li class="dogBreed" id='Berger-allemand'>Berger allemand</li>
+					<li class="dogBreed" id='labrador-retriever'>Labrador-retriever</li>
+					<li class="dogBreed" id='Golden-retriever'>Golden retriever</li>
+					<li class="dogBreed" id='Doberman'>Doberman</li>
+					<li class="dogBreed" id='Rottweiller'>Rottweiller</li>
+					<li class="dogBreed" id='booldog'>booldog</li>
+			</ul>
+		</div>
+	<div class="colDog">
+	<div class="bodyCard">
+		{% for dog in dogs %}
 
-</ul>
+			{% if ( dog.adopted == 0 ) %}
+				<div class="container displayCard">
+					<div class="card">
+						<div>
+							<img src="{{dog.image}}"class="card_image" width="600">
+						</div>
+						<div class="card_body">
+							<h4>{{dog.name}}</h4>
+							<h4 class="h4DogBreed" data-id={{dog.breed}}>{{dog.breed}}</h4>
+							<p>{{dog.description}}</p>
+						</div>
+						<div class="card_footer">
+							<div class="user"></div>
+						</div>
+						{% if not app.user %}
+						{% endif %}
 
-</div>
-<div class="colDog">
-  <div class="bodyCard">
-	{% for dog in dogs %}
-
-		{% if ( dog.adopted == 0 ) %}
-			<div class="container displayCard">
-				<div class="card">
-					<div>
-						<img src="{{dog.image}}"class="card_image" width="600">
+						{% if app.user %}
+							<a class="button-adopt" id="ButtonAdopt" data-id='{{dog.id}}' type="button" href="{{path('app_dog_adopt', {id:dog.id})}}">adoptez</a>    
+						{% endif %}
 					</div>
-					<div class="card_body">
-						<h4>{{dog.name}}</h4>
-						<h4 class="h4DogBreed" data-id={{dog.breed}}>{{dog.breed}}</h4>
-						<p>{{dog.description}}</p>
-					</div>
-					<div class="card_footer">
-						<div class="user"></div>
-					</div>
-					{% if not app.user %}
-					{% endif %}
-
-					{% if app.user %}
-						<a class="button-adopt" id="ButtonAdopt" data-id='{{dog.id}}' type="button" href="{{path('app_dog_adopt', {id:dog.id})}}">adoptez</a>    
-					{% endif %}
 				</div>
-			</div>
-		{% endif %}
+			{% endif %}
 
-	{% endfor %}
-	</div> 
-</div>
+		{% endfor %}
+		</div> 
+	</div>
 {% endblock %}
 

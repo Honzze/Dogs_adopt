@@ -1,6 +1,8 @@
 /***********************************ALL*******************************************/
 *{
     font-family:system-ui;
+    user-select: none;
+    
 }
 
 html {
@@ -52,10 +54,10 @@ footer {
     color: white;
     font-weight: bold;
     font-size: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 50px;
-    margin-bottom: 15px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 2rem;
+    margin-bottom:2rem;
 }
 
 .titleItems {
@@ -63,7 +65,7 @@ footer {
     font-weight: bold;
     font-size: 15px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
 }
 
 .titlecopyright {

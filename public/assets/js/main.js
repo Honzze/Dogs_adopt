@@ -13,4 +13,13 @@ window.addEventListener('resize', () => {
 });
 
 
+const Gallery = document.querySelector("gallery-item");
+const GalleryText = document.querySelector("gallery-Text");
 
+Gallery.addEventListener('onmouseover', () => {
+    GalleryText.classList.toggle("Text-annim");
+});
+
+Gallery.addEventListener('onmouseout', () => {
+    GalleryText.classList.toggle("Text-annim");
+});

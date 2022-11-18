@@ -33,7 +33,7 @@ img {
     flex-direction: column;
     width: clamp(20rem, calc(20rem + 2vw), 22rem);
     overflow: hidden;
-    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 3px 3px rgb(143, 143, 143);    
     border-radius: 1em;
     background: #ECE9E6;
     background: linear-gradient(to right, #FFFFFF, #ECE9E6);
@@ -256,6 +256,10 @@ img {
     margin: 20px;
 }
 
+textarea {
+    resize: none;
+ }
+
 .formName {
     font-size: 20px;
     margin: 20px;
@@ -272,7 +276,10 @@ img {
 }
 
 #contact_message {
-    max-width: 400px;
+    min-width: 25rem;
+    max-width: 25rem;
+    min-height: 7rem;
+    max-height: 7rem;
 }
 
 #contact_email {
@@ -433,4 +440,137 @@ img {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+}
+
+/***********************************MENU-CATEGORY*******************************************/
+
+.category{
+    margin-left:5rem ;
+    margin-right:5rem ;
+
+
+}
+.listCategory{
+    display: flex;
+    flex-direction:row; 
+    justify-content:center;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 5px;
+    box-shadow: 5px 3px 3px rgb(0, 0, 0);    
+    padding: 0;
+    
+}
+
+.dogBreed{
+    list-style-type: none;
+    margin: 1rem;
+    padding: 3px;
+    border: solid 1px black;
+    border-radius: 5px;
+    box-shadow: 2px 1px 1px rgb(0, 0, 0);    
+}
+
+@media screen and (max-width: 700px) {
+    .category{
+        margin-left:5rem ;
+        margin-right:5rem ;
+    }
+
+    .listCategory{
+        display: flex;
+        flex-direction:column; 
+        border: solid 2px black;
+        border-radius: 5px;
+        box-shadow: 5px 3px 3px rgb(0, 0, 0);    
+        padding: 0;
+    }
+    
+    .dogBreed{
+        list-style-type: none;
+        margin: 1rem;
+        padding: 3px;
+        border: solid 1px black;
+        border-radius: 5px;
+        box-shadow: 2px 1px 1px rgb(0, 0, 0);    
+    }
+    
+}
+
+@media screen and (max-width: 1100px) {
+    .category{
+        margin-left:9rem ;
+        margin-right:15rem ;
+
+    }
+
+    .listCategory{
+        display: flex;
+        flex-direction:column; 
+        border: solid 2px black;
+        border-radius: 5px;
+        box-shadow: 5px 3px 3px rgb(0, 0, 0);    
+        padding: 0;
+        min-width: 12rem;
+    }
+    
+    .dogBreed{
+        list-style-type: none;
+        margin: 1rem;
+        text-align: center;
+        min-width: 10rem;
+        border: solid 1px black;
+        border-radius: 5px;
+        box-shadow: 2px 1px 1px rgb(0, 0, 0);    
+
+    }
+    
+}
+
+
+/***********************************STRIPE-ELEMENT*******************************************/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.containerStripe{
+    display:flex;
+    align-items:center
+}
+#checkout-form{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.titlePayment{
+    text-align: center;
+    margin: 0;
+    font-weight:lighter;
+}
+.titleAmount{
+    margin: 0;
+    font-weight: lighter;
+}
+.blockAmount{
+    text-align: center;
+    margin-top: 1rem;
+}
+.btn-payment {
+    margin-top: 0;
+    margin: 1rem;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: solid 2px rgb(0, 0, 0);
+}
+.btn-payment:hover{
+    transition-duration: 300ms;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: solid 2px rgb(0, 0, 0);
 }
